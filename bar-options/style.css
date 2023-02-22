@@ -1,0 +1,14 @@
+.app {
+  height: 100%;
+}
+.app div {
+  margin: 0 0 10px 0;
+}
+.app .chart-bar {
+  height: 400px;
+  width: 100%;
+}
+.app .chart-bar .bar {
+  width: 100%;
+  height: 100%;
+}

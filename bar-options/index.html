@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vue2-Chartjs-bar-options</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="app">
+	<h1>{{ message }}</h1>
+  <h3>{{ subMessage }}</h3>
+  <div>
+    <input v-model="width"></input>
+    <button @click="changeWidth">changeWidth(%)</button>
+    <input v-model="height"></input>
+    <button @click="changeHeight">changeHeight(%)</button>
+  </div>
+  <div>
+    <input v-model="legend"></input>
+    <button @click="appendLegend">appendLegend(%)</button>
+    <input v-model="yticksAppend"></input>
+    <button @click="appendYticks">appendYticks(%)</button>
+    <input v-model="yticksStepSize"></input>
+    <button @click="changeStepSize">changeStepSize</button>
+  </div>
+  <div>
+    <span>yTickPosition: </span>
+    <select v-model="ytickPositionProp">
+      <option v-for="(item, index) in ytickPositionList" :key="index" :value="item.value">
+        {{item.name}}
+      </option>  
+    </select>
+    <span>yFontStyle: </span>
+    <select v-model="yFontStyleProp">
+      <option v-for="(item, index) in yFontStylePropList" :key="index" :value="item.value">
+        {{item.name}}
+      </option>  
+    </select>
+  </div>
+
+  <div>
+    <button @click="changeBeginZeroProp">beginAtZero({{beginZeroProp}})</button>
+    <button @click="changeAspectRatioProp" :disabled="true">aspectRatio({{aspectRatioProp}})</button>
+    
+    <button @click="changeLegend">legend({{legendProp}})</button>
+    <button @click="changeYticks">yticks({{yticksProp}})</button>
+    <button @click="changeYgridLines">yGridLinesProp({{yGridLinesProp}})</button>
+    
+  </div>
+
+
+  <div class="chart-bar" >
+    <bar-chart ref="bar" :style="resizeChart" :rc="resizeChart" :bzp="beginZeroProp" :arp="aspectRatioProp" :al="appendLegendProp" :ytc="yAxesTicksCallbackProp" :ytp="ytickPositionProp" :yfsp="yFontStyleProp" :lg="legendProp" :yts="yticksProp" :ygl="yGridLinesProp" :steps="yticksStepSizeProp"></bar-chart>
+  </div>
+  
+
+	
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js'></script>
+<script src='https://unpkg.com/vue-chartjs@3.0.0/dist/vue-chartjs.full.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
